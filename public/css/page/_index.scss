@@ -1,0 +1,112 @@
+.home {
+    &_banner {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 220px;
+        &_pic {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.74%;
+        }
+        &_bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+        &_main {
+            position: absolute;
+            width: 70%;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            filter:drop-shadow(7px 7px 10px rgba(0,0,0,0.5));
+        }
+        &_circle {
+            position: absolute;
+            width: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            img {
+                animation: bannerCircle 4s linear infinite;
+            }
+        }
+        &_text {
+            position: absolute;
+            width: 60%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            filter:drop-shadow(7px 7px 10px rgba(0,0,0,0.5));
+        }
+        @media screen and (max-width: 575px) {
+            &_pic {
+                padding-bottom: 100%;
+            }
+            &_main {
+                width: 90%;
+                top: 60%;
+            }
+            &_text {
+                width: 90%;
+                top: 40%;
+            }
+            &_circle {
+                transform: none;
+                top: 10%;
+                left: 65%;
+                width: 40%;
+            }
+        }
+    }
+    &_scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 3%;
+        cursor: pointer;
+        &_line {
+            position: relative;
+            width: 2px;
+            height: 30px;
+            background-color: #fff;
+            margin: 0 auto 5px;
+            .dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #fff;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: scroll 0.8s linear infinite alternate-reverse;
+            }
+        }
+        span {
+            font-family: $font-mont;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+}
+
+@keyframes bannerCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: calc(100% - 6px);
+    }
+}
