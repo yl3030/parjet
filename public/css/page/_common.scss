@@ -4,15 +4,17 @@ $font-open: 'Open Sans', sans-serif;
 $font-mont: 'Montserrat', sans-serif;
 $font-play: 'Play', sans-serif;
 $transition-common: 0.3s;
+$transition-second: 0.5s;
 $blue-1: #065090;
 $blue-2: #8FE0E4;
 $blue-3: #A7BDBC;
 $blue-4: #2E8AC1;
+$blue-5: #0B568B;
 $gray-bb: #bbbbbb;
 
 body {
     font-family: $font-open;
-    background-color: #fcfcfc;
+    // background-color: #fcfcfc;
 }
 
 ul {
@@ -39,6 +41,7 @@ input, button {
 
 main {
     padding-top: 80px;
+    overflow: hidden;
 }
 
 .input-common {
@@ -535,5 +538,87 @@ main {
         position: absolute;
         left: 0;
         bottom: 0;
+    }
+}
+
+.btn-more {
+    &-line {
+        width: 135px;
+        height: 35px;
+        display: block;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: $blue-5;
+            bottom: 0;
+            right: 0;
+            transition: 0.2s;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 7px;
+            background-color: $blue-5;
+            bottom: -1px;
+            right: 3px;
+            transform: rotate(-60deg);
+            transition: 0.2s;
+        }
+        .inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $font-mont;
+            color: $blue-5;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 100%;
+                background-color: $blue-5;
+                bottom: 0;
+                left: 0;
+                transition: 0.1s;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 60px;
+                height: 1px;
+                background-color: $blue-5;
+                top: 0;
+                left: 0;
+                transition: 0.1s;
+            }
+            span {
+                transition: 0.1s;
+            }
+        }
+        &:hover {
+            &::before {
+                transition-delay: 0.2s;
+                width: 25%;
+            }
+            .inner {
+                &::before {
+                    transition-delay: 0.1s;
+                    height: 0;
+                }
+                &::after {
+                    width: 0;
+                }
+                span {
+                    transition-delay: 0.4s;
+                    transform: translateY(10px);
+                }
+            }
+        }
     }
 }
