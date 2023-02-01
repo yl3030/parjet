@@ -35,6 +35,14 @@ $(document).click(function (event) {
     }
 });
 
+$(".btn-top").click(function(){
+    $("html, body").animate({scrollTop: 0}, 300);
+})
+
+$(".privacy_btn").click(function(){
+    $(this).parents(".privacy").fadeOut(300);
+})
+
 var swiperProductList = new Swiper(".product_list_swiper", {
     slidesPerView: 1,
     pagination: {
@@ -49,9 +57,15 @@ var swiperProductList = new Swiper(".product_list_swiper", {
     loop: true,
 })
 
-$(".product_list_pic").mouseover(function() {
-    swiperProductList.autoplay.stop()
-});
-$(".product_list_pic").mouseleave(function() {
-    swiperProductList.autoplay.start()
-});
+let productNum = $(".product_list_pic").length;
+for(let i=1; i<=productNum; i++) {
+    let ProductPic = document.getElementById("ProductListPic-" + i);
+    let ProductVideo = document.getElementById("ProductListVideo-" + i);
+    ProductPic.addEventListener("mouseover", (event) => {
+        ProductVideo.play();
+        ProductVideo.currentTime = 0;
+    })
+    ProductPic.addEventListener("mouseleave", (event) => {
+        ProductVideo.pause();
+    })  
+}

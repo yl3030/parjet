@@ -11,10 +11,12 @@ $blue-3: #A7BDBC;
 $blue-4: #2E8AC1;
 $blue-5: #0B568B;
 $gray-bb: #bbbbbb;
+$gray-c1: #c1c1c1;
+$gray-85: #858585;
 
 body {
     font-family: $font-open;
-    // background-color: #fcfcfc;
+    background-color: #fcfcfc;
 }
 
 ul {
@@ -44,6 +46,11 @@ main {
     overflow: hidden;
 }
 
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .input-common {
     height: 50px;
     background-color: #F1F1F1;
@@ -67,6 +74,171 @@ main {
         transition: $transition-common;
         &:hover {
             background-color: $blue-2;
+        }
+    }
+    &-line4 {
+        border-radius: 15px;
+        border: 1px solid $blue-4;
+        font-family: $font-mont;
+        transition: $transition-common;
+        font-size: 14px;
+        color: $blue-4;
+        padding: 8px 20px;
+        &:hover {
+            border-color: $blue-2;
+            background-color: $blue-2;
+            color: #fff;
+        }
+    }
+    &-more {
+        &-line {
+            width: 135px;
+            height: 35px;
+            display: block;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: $blue-5;
+                bottom: 0;
+                right: 0;
+                transition: 0.2s;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 7px;
+                background-color: $blue-5;
+                bottom: -1px;
+                right: 3px;
+                transform: rotate(-60deg);
+                transition: 0.2s;
+            }
+            .inner {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-mont;
+                color: $blue-5;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 1px;
+                    height: 100%;
+                    background-color: $blue-5;
+                    bottom: 0;
+                    left: 0;
+                    transition: 0.1s;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 60px;
+                    height: 1px;
+                    background-color: $blue-5;
+                    top: 0;
+                    left: 0;
+                    transition: 0.1s;
+                }
+                span {
+                    transition: 0.1s;
+                }
+            }
+            &:hover {
+                &::before {
+                    transition-delay: 0.2s;
+                    width: 25%;
+                }
+                .inner {
+                    &::before {
+                        transition-delay: 0.1s;
+                        height: 0;
+                    }
+                    &::after {
+                        width: 0;
+                    }
+                    span {
+                        transition-delay: 0.4s;
+                        transform: translateY(10px);
+                    }
+                }
+            }
+        }
+        &-bg {
+            width: 175px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: $transition-common;
+            background-color: $blue-5;
+            border: 1px solid $blue-5;
+            &:hover {
+                background-color: transparent;
+                span {
+                    color: $blue-5;
+                }
+                .btn-more-bg_arrow {
+                    left: 95%;
+                }
+            }
+            span {
+                font-family: $font-mont;
+                transition: $transition-common;
+                color: #fff;
+            }
+            &_arrow {
+                position: absolute;
+                width: 55px;
+                bottom: 15px;
+                left: 85%;
+                transition: $transition-common;
+            }
+            @media screen and (max-width: 991px) {
+                width: 150px;
+                height: 40px;
+            }
+        }
+    }
+    &-top {
+        position: fixed;
+        right: 60px;
+        bottom: 200px;
+        z-index: 50;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-common;
+        cursor: pointer;
+        svg {
+            width: 50%;
+            path {
+                transition: $transition-common;
+            }
+        }
+        &:hover {
+            background-color: $blue-2;
+            box-shadow: none;
+            svg {
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+        @media screen and (max-width: 767px) {
+            right: 20px;
         }
     }
 }
@@ -533,91 +705,288 @@ main {
 }
 
 .banner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 30%;
+    margin-bottom: 30px;
+    &_main {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+    &_mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.42);
+    }
+    &_title {
+        position: absolute;
+        width: 100%;
+        color: #fff;
+        font-family: $font-play;
+        margin: 0;
+        text-align: center;
+        text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        font-size: 48px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: 700;
+    }
     &_style {
         width: 100%;
         position: absolute;
         left: 0;
         bottom: 0;
     }
+    @media screen and (max-width: 767px) {
+        padding-bottom: 60%;
+        &_title {
+            font-size: 44px;
+        }
+    }
+    @media screen and (max-width: 450px) {
+        padding-bottom: 80%;
+        &_title {
+            font-size: 40px;
+        }
+    }
 }
 
-.btn-more {
-    &-line {
-        width: 135px;
-        height: 35px;
+.footer {
+    padding: 40px 0 60px;
+    background-image: url(../img/footer_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &_logo {
+        width: 120px;
         display: block;
-        position: relative;
-        &::before {
-            position: absolute;
-            content: "";
+        margin-bottom: 25px;
+        img {
             width: 100%;
-            height: 1px;
-            background-color: $blue-5;
-            bottom: 0;
-            right: 0;
-            transition: 0.2s;
+        }
+    }
+    &_inform {
+        li {
+            font-size: 13px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+    }
+    &_nav {
+        width: fit-content;
+        margin-left: auto;
+        margin-bottom: 30px;
+        li {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        a {
+            color: #fff;
+            font-family: $font-mont;
+            font-size: 14px;
+            font-weight: 600;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                transition: $transition-common;
+                width: 0;
+                height: 1px;
+                background-color: #fff;
+                left: 0;
+                bottom: -2px;
+            }
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &_copyright {
+        p {
+            color: #fff;
+            font-size: 12px;
+            margin: 0;
+            text-align: right;
+        }
+    }
+    &_certi {
+        width: 45px;
+        margin-left: 20px;
+        img {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        &_nav {
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.privacy {
+    position: fixed;
+    max-width: 1200px;
+    width: calc(100% - 40px);
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    padding: 25px 40px;
+    z-index: 150;
+    p {
+        font-size: 14px;
+        margin-bottom: 15px;
+        font-family: $font-mont;
+    }
+    a {
+        color: $blue-1;
+        text-decoration: underline;
+        font-weight: 600;
+        font-size: 14px;
+        transition: $transition-common;
+        &:hover{ 
+            color: $blue-2;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        padding: 20px;
+        a {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+        }
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 45px;
+    li {
+        &:not(:last-child) {
+            position: relative;
+            padding-right: 24px;
+            &::after {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 15px;
+                background-color: #000;
+                transform: translateY(-50%) rotate(20deg);
+                top: 50%;
+                right: 12px;
+            }
+        }
+        svg {
+            width: 18px;
+            transform: translateY(-2px);
+            path {
+                transform: $transition-common;
+            }
+        }
+        a {
+            font-size: 14px;
+            font-family: $font-mont;
+            transform: $transition-common;
+            &:hover, &.active {
+                color: $blue-4;
+                svg {
+                    path {
+                        fill: $blue-4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab {
+    &-common {
+        margin-bottom: 80px;
+        border: 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-wrap: nowrap;
+        .nav-item {
+            margin: 0 12px;
+            position: relative;
+            &:not(:first-child) {
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 24px;
+                    height: 1px;
+                    background-color: $gray-bb;
+                    top: 50%;
+                    right: 100%;
+                }
+            }
+        }
+        .nav-link {
+            color: $gray-85;
+            font-family: $font-mont;
+            padding: 14px 32px;
+            border-radius: 100px;
+            border: 1px solid $gray-bb;
+            transition: $transition-common;
+            background-color: #fcfcfc;
+            &.active, &:hover {
+                border: 1px solid $blue-2;
+                background-color: $blue-2;
+                color: #fff;
+                font-weight: 600;
+            }
         }
         &::after {
             position: absolute;
             content: "";
-            width: 1px;
-            height: 7px;
-            background-color: $blue-5;
-            bottom: -1px;
-            right: 3px;
-            transform: rotate(-60deg);
-            transition: 0.2s;
+            width: 50%;
+            height: 1px;
+            background-color: $gray-bb;
+            top: 50%;
+            right: 0;
+            z-index: -1;
+            // transform: translateY(-50%);
         }
-        .inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: $font-mont;
-            color: $blue-5;
-            &::before {
-                position: absolute;
-                content: "";
-                width: 1px;
-                height: 100%;
-                background-color: $blue-5;
-                bottom: 0;
-                left: 0;
-                transition: 0.1s;
+        @media screen and (max-width: 767px) {
+            .nav-item {
+                margin: 0 6px;
+                &:not(:first-child) {
+                    &::before {
+                        width: 12px;
+                    }
+                }
             }
-            &::after {
-                position: absolute;
-                content: "";
-                width: 60px;
-                height: 1px;
-                background-color: $blue-5;
-                top: 0;
-                left: 0;
-                transition: 0.1s;
-            }
-            span {
-                transition: 0.1s;
+            .nav-link {
+                padding: 12px 25px;
+                font-size: 14px;
             }
         }
-        &:hover {
-            &::before {
-                transition-delay: 0.2s;
-                width: 25%;
+        @media screen and (max-width: 575px) {
+            margin-bottom: 40px;
+            .nav-item {
+                margin: 0 6px;
+                &:not(:first-child) {
+                    &::before {
+                        width: 12px;
+                    }
+                }
             }
-            .inner {
-                &::before {
-                    transition-delay: 0.1s;
-                    height: 0;
-                }
-                &::after {
-                    width: 0;
-                }
-                span {
-                    transition-delay: 0.4s;
-                    transform: translateY(10px);
-                }
+            .nav-link {
+                padding: 8px 15px;
+                font-size: 14px;
             }
         }
     }

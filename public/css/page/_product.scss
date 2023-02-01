@@ -66,10 +66,19 @@
             height: 100%;
             top: 0;
             left: 0;
-            object-fit: cover;
+            // object-fit: cover;
             transition: $transition-common;
             opacity: 0;
             z-index: 3;
+            background-color: #fff;
+        }
+        &_video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: contain;
         }
         &_item {
             margin-bottom: 65px;
@@ -142,6 +151,264 @@
                 opacity: 1;
                 width: 120px;
                 height: 120px;
+            }
+        }
+    }
+    &_class {
+        padding: 70px 0 150px;
+        background-image: url(../img/product_bg.png);
+        background-size: 100vw;
+        background-position: center top;
+        background-repeat: no-repeat;
+        &_pic {
+            margin-top: 40px;
+            width: 100%;
+            padding-bottom: 40%;
+            position: relative;
+            &_swiper {
+                position: absolute;
+                max-width: 1100px;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                .swiper-slide-active {
+                    .product_class_pic_main {
+                        border-color: transparent;
+                        width: 100%;
+                        padding-bottom: 100%;
+                        margin-bottom: 70px;
+                    }
+                    .product_class_name {
+                        font-size: 30px;
+                        color: #000;
+                    }
+                }
+                .swiper-slide {
+                    transition: $transition-common;
+                    &:not(.swiper-slide-active) {
+                        margin-top: 9vw;
+                    }
+                }
+            }
+            &_main {
+                position: relative;
+                width: 50%;
+                padding-bottom: 50%;
+                border-radius: 50%;
+                overflow: hidden;
+                margin: 0 auto 20px;
+                display: block;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                border: 2px solid $blue-3;
+                transition: $transition-common;
+                >img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+        &_name {
+            text-align: center;
+            color: $blue-1;
+            font-family: $font-mont;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            transition: $transition-common;
+        }
+        &_intro {
+            max-width: 1000px;
+            width: 100%;
+            margin: 5.4vw auto 0;
+            &_item {
+                display: flex;
+            }
+            &_video {
+                width: 30%;
+                video {
+                    width: 100%;
+                }
+            }
+            &_text {
+                width: 70%;
+                padding-left: 40px;
+                padding-top: 45px;
+                p {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+        &_arrow {
+            &_item {
+                width: 50px;
+                margin: 0 10px;
+                cursor: pointer;
+                img, svg {
+                    width: 100%;
+                    path {
+                        transition: $transition-common;
+                    }
+                }
+                &:hover {
+                    svg {
+                        path {
+                            fill: $blue-2;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1399px) {
+            &_pic {
+                padding-bottom: 50%;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            padding: 35px 0 100px;
+            background-image: url(../img/product_bg-plate.png);
+            .container {
+                max-width: inherit;
+            }
+            &_pic {
+                margin-top: 5vw;
+                padding-bottom: 55%;
+                &_swiper {
+                    .swiper-slide {
+                        &:not(.swiper-slide-active) {
+                            margin-top: 15vw;
+                        }
+                    }
+                }
+            }
+            &_intro {
+                &_text {
+                    padding-top: 0;
+                }
+            }
+        }
+        @media screen and (max-width: 767px) {
+            &_pic {
+                &_swiper {
+                    .swiper-slide-active {
+                        .product_class_pic_main {
+                            margin-bottom: 40px;
+                        }
+                        .product_class_name {
+                            font-size: 26px;
+                        }
+                    }
+                }
+            }
+            &_intro {
+                &_item {
+                    display: block;
+                }
+                &_video {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+                &_text {
+                    padding-top: 30px;
+                    padding-left: 0;
+                    width: 100%;
+                }
+            }
+        }
+        @media screen and (max-width: 575px) {
+            &_pic {
+                padding-bottom: 70%;
+                &_swiper {
+                    .swiper-slide-active {
+                        .product_class_pic_main {
+                            margin-bottom: 30px;
+                        }
+                        .product_class_name {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 450px) {
+            &_pic {
+                padding-bottom: 90%;
+                &_main {
+                    width: 30%;
+                    padding-bottom: 30%;
+                }
+                &_swiper {
+                    .swiper-slide-active {
+                        .product_class_pic_main {
+                            border-color: transparent;
+                            width: 60%;
+                            padding-bottom: 60%;
+                        }
+                    }
+                }
+            }
+            &_intro {
+                &_video {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &_classList {
+        &_intro {
+            max-width: 1000px;
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto 65px;
+            p {
+                line-height: 1.6;
+                margin: 0;
+            }
+        }
+        &_content {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-bottom: 150px;
+        }
+        &_item {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            border: 1px solid $gray-85;
+            border-radius: 15px;
+            padding: 10px 10px 0; 
+            transition: $transition-common;
+            margin-bottom: 20px;
+            h3 {
+                margin: 0;
+                padding-left: 15px;
+                font-weight: normal;
+                margin: 0;
+                font-size: 16px;
+                width: calc(100% - 85px);
+                padding-bottom: 10px;
+                transition: $transition-common;
+            }
+            &:hover {
+                border-color: $blue-4;
+                h3 {
+                    color: $blue-4;
+                }
+            }
+        }
+        &_pic {
+            width: 85px;
+            img {
+                width: 100%;
             }
         }
     }
