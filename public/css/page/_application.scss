@@ -1,0 +1,146 @@
+.application {
+    &_list {
+        background-image: url(../img/appilation-bg.png);
+        background-size: 100%;
+        background-position: 0 0;
+        &_item {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            .application_pic {
+                width: 35%;
+                padding-bottom: 35%;
+                position: relative;
+            }
+            &:nth-child(even) {
+                .application_pic {
+                    order: 2;
+                }
+                .application_list_text {
+                    order: 1;
+                }
+            }
+        }
+        &_text {
+            width: 65%;
+            padding: 0 50px;
+            h2 {
+                font-size: 28px;
+                font-family: $font-mont;
+                margin-bottom: 20px;
+                font-weight: 600;
+                color: $blue-1;
+            }
+            p {
+                font-size: 14px;
+                margin-bottom: 40px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            &_item {
+                margin-bottom: 60px;
+                .application_pic {
+                    margin: 0 auto 30px;
+                    width: 50%;
+                    padding-bottom: 50%;
+                }
+                &:nth-child(even) {
+                    .application_pic {
+                        order: 1;
+                    }
+                    .application_list_text {
+                        order: 2;
+                    }
+                }
+            }
+            &_text {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            &_item {
+                .application_pic {
+                    width: 80%;
+                    padding-bottom: 80%;
+                }
+            }
+        }
+        @media screen and (max-width: 767px) {
+            background-image: none;
+        }
+        @media screen and (max-width: 450px) {
+            &_item {
+                .application_pic {
+                    width: 100%;
+                    padding-bottom: 100%;
+                }
+            }
+        }
+    }
+    &_pic {
+        background-image: url(../img/wave.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        &:hover {
+            .application_pic {
+                &_inner {
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+                }
+                &_mask {
+                    opacity: 1;
+                }
+                &_icon {
+                    opacity: 1;
+                }
+            }
+        }
+        &_inner {
+            position: absolute;
+            width: 60%;
+            padding-bottom: 60%;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-common;
+        }
+        &_content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        &_main {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
+        &_mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(143, 224, 228, 0.8);
+            transition: $transition-common;
+            opacity: 0;
+        }
+        &_icon {
+            width: 32%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: $transition-common;
+            opacity: 0;
+            path {
+                fill: #fff;
+            }
+        }
+    }
+}
