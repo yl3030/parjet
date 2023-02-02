@@ -34,11 +34,27 @@ a {
     }
 }
 
-input, button {
+input, button, select {
     background-color: transparent;
     outline: none;
     border: 0;
     font-family: $font-open;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+    appearance: none;
+    background-image: url(../img/arrow-down-gray.svg);
+    background-size: 15px 7px;
+    background-position: calc(100% - 15px) center;
+    background-repeat: no-repeat;
 }
 
 main {
@@ -58,17 +74,49 @@ main {
     }
 }
 
-.input-common {
-    height: 50px;
-    background-color: #F1F1F1;
-    border: 1px solid $gray-bb;
-    border-radius: 15px;
-    padding: 5px 20px;
-    font-size: 16px; 
-    &::placeholder {
+.input {
+    &-common {
+        height: 50px;
+        background-color: #F1F1F1;
+        border: 1px solid $gray-bb;
+        border-radius: 15px;
+        padding: 5px 20px;
         font-size: 16px;
-        color: $blue-3;
         font-family: $font-mont;
+        &::placeholder {
+            font-size: 16px;
+            color: $blue-3;
+            font-family: $font-mont;
+        }
+    }
+    &-item {
+        margin-bottom: 20px;
+        label {
+            color: $blue-1;
+            font-size: 14px;
+            font-family: $font-mont;
+            margin-bottom: 8px;
+        }
+        .input-common {
+            width: 100%;
+        }
+    }
+    &-vert {
+        display: flex;
+        padding-right: 15px;
+        align-items: center;
+        input {
+            width: calc(100% - 20px - 40px - 15px);
+        }
+        &_icon {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        &_pic {
+            width: 40px;
+            margin-left: 15px;
+        }
     }
 }
 
@@ -90,6 +138,30 @@ main {
         transition: $transition-common;
         font-size: 14px;
         color: $blue-4;
+        padding: 8px 20px;
+        &:hover {
+            border-color: $blue-2;
+            background-color: $blue-2;
+            color: #fff;
+        }
+    }
+    &-blue1 {
+        border-radius: 15px;
+        background-color: $blue-1;
+        color: #fff;
+        font-family: $font-mont;
+        transition: $transition-common;
+        &:hover {
+            background-color: $blue-2;
+        }
+    }
+    &-line1 {
+        border-radius: 15px;
+        border: 1px solid $blue-1;
+        font-family: $font-mont;
+        transition: $transition-common;
+        // font-size: 14px;
+        color: $blue-1;
         padding: 8px 20px;
         &:hover {
             border-color: $blue-2;
@@ -912,7 +984,7 @@ main {
 }
 
 .breadcrumb {
-    margin-bottom: 45px;
+    margin-bottom: 30px;
     li {
         &:not(:last-child) {
             position: relative;

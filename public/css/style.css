@@ -20,11 +20,30 @@ a:hover {
   color: #000;
 }
 
-input, button {
+input, button, select {
   background-color: transparent;
   outline: none;
   border: 0;
   font-family: "Open Sans", sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(../img/arrow-down-gray.svg);
+  background-size: 15px 7px;
+  background-position: calc(100% - 15px) center;
+  background-repeat: no-repeat;
 }
 
 main {
@@ -54,6 +73,7 @@ main {
   border-radius: 15px;
   padding: 5px 20px;
   font-size: 16px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .input-common::-webkit-input-placeholder {
@@ -78,6 +98,46 @@ main {
   font-size: 16px;
   color: #A7BDBC;
   font-family: "Montserrat", sans-serif;
+}
+
+.input-item {
+  margin-bottom: 20px;
+}
+
+.input-item label {
+  color: #065090;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 8px;
+}
+
+.input-item .input-common {
+  width: 100%;
+}
+
+.input-vert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-vert input {
+  width: calc(100% - 20px - 40px - 15px);
+}
+
+.input-vert_icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.input-vert_pic {
+  width: 40px;
+  margin-left: 15px;
 }
 
 .btn-blue4 {
@@ -105,6 +165,35 @@ main {
 }
 
 .btn-line4:hover {
+  border-color: #8FE0E4;
+  background-color: #8FE0E4;
+  color: #fff;
+}
+
+.btn-blue1 {
+  border-radius: 15px;
+  background-color: #065090;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn-blue1:hover {
+  background-color: #8FE0E4;
+}
+
+.btn-line1 {
+  border-radius: 15px;
+  border: 1px solid #065090;
+  font-family: "Montserrat", sans-serif;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #065090;
+  padding: 8px 20px;
+}
+
+.btn-line1:hover {
   border-color: #8FE0E4;
   background-color: #8FE0E4;
   color: #fff;
@@ -1080,7 +1169,7 @@ main {
 }
 
 .breadcrumb {
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .breadcrumb li:not(:last-child) {
@@ -3656,6 +3745,324 @@ main {
   }
   .product_intro_appl_name {
     font-size: 14px;
+  }
+}
+
+.inquiry > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.inquiry > .row > div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.inquiry_order {
+  padding-left: 40px;
+  background-color: #f5f5f5;
+  padding-top: 70px;
+  padding-right: 50px;
+  padding: 70px 40px;
+  height: calc(100vh - 80px - 286.14px);
+  overflow-y: auto;
+}
+
+.inquiry_order_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+
+.inquiry_order_item:first-child {
+  margin-top: 0;
+}
+
+.inquiry_order_pic {
+  width: 20%;
+  padding-bottom: calc(20% * 0.75);
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.inquiry_order_pic > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.inquiry_order_pic:hover > img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.inquiry_order_text {
+  width: 80%;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inquiry_order_delete {
+  width: 25px;
+  padding: 0;
+  margin-left: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.inquiry_order_delete svg {
+  width: 100%;
+}
+
+.inquiry_order_delete svg path {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.inquiry_order_delete:hover {
+  border-color: #065090;
+}
+
+.inquiry_order_delete:hover svg {
+  width: 100%;
+}
+
+.inquiry_order_delete:hover svg path {
+  fill: #065090;
+}
+
+.inquiry_order_title {
+  width: calc(100% - 25px - 50px - 100px);
+}
+
+.inquiry_order_title h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2E8AC1;
+  margin-bottom: 5px;
+}
+
+.inquiry_order_title p {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  font-size: 14px;
+  color: #858585;
+}
+
+.inquiry_order_num {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inquiry_order_num_btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #bbbbbb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.inquiry_order_num_btn svg {
+  width: 60%;
+}
+
+.inquiry_order_num_btn svg path {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.inquiry_order_num_btn:hover {
+  border-color: #065090;
+}
+
+.inquiry_order_num_btn:hover svg {
+  width: 100%;
+}
+
+.inquiry_order_num_btn:hover svg path {
+  stroke: #065090;
+}
+
+.inquiry_order_num input {
+  width: calc(100% - 60px);
+  text-align: center;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.inquiry h2 {
+  font-weight: 600;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  color: #065090;
+  margin-bottom: 35px;
+}
+
+.inquiry_form {
+  padding: 116px 40px 70px 40px;
+  height: calc(100vh - 80px - 286.14px);
+  overflow-y: auto;
+}
+
+.inquiry_form_profile {
+  max-width: 450px;
+  width: 100%;
+}
+
+.inquiry_form_profile_item {
+  margin-bottom: 60px;
+}
+
+.inquiry_form_profile_item > img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.inquiry_form_profile_item > .row {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.inquiry_form_profile_item > .row > div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.inquiry_form_profile_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.inquiry_form_profile_input label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  width: 20px;
+  display: block;
+}
+
+.inquiry_form_profile_input input {
+  width: calc(100% - 20px);
+  height: 35px;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+.inquiry_form_btn {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inquiry_form_btn button {
+  width: calc(50% - 8px);
+  height: 50px;
+}
+
+@media screen and (max-width: 991px) {
+  .inquiry_order {
+    height: auto;
+    overflow-y: inherit;
+  }
+  .inquiry_form {
+    height: auto;
+    overflow-y: inherit;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .inquiry_order {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .inquiry_order_text {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: calc(100% - 100px);
+    position: relative;
+  }
+  .inquiry_order_title {
+    width: calc(100% - 30px);
+    margin-bottom: 10px;
+  }
+  .inquiry_order_title h3 {
+    font-size: 18px;
+  }
+  .inquiry_order_title p {
+    font-size: 13px;
+  }
+  .inquiry_order_pic {
+    width: 100px;
+    padding-bottom: calc(100px * 0.75);
+  }
+  .inquiry_order_delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .inquiry_form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .inquiry_form_profile > .row > div {
+    width: 100%;
+  }
+  .inquiry_form_profile_item {
+    margin-bottom: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
