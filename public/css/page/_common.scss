@@ -464,6 +464,14 @@ main {
                             transform: none;
                         }
                     }
+                    &.active {
+                        >a {
+                            color: $blue-4 !important;
+                            &::after {
+                                height: 5px;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -489,7 +497,9 @@ main {
                         padding: 8px 15px;
                         font-size: 13px;
                         color: #4d4d4d;
-                        &:hover, &.active {
+                    }
+                    &:hover, &.active {
+                        >a {
                             background-color: #D0F6F8;
                             color: $blue-1;
                         }
@@ -775,7 +785,7 @@ main {
                                 transition: $transition-common;
                             }
                         }
-                        &.active {
+                        &.expand {
                             &::before {
                                 opacity: 1;
                             }
@@ -859,6 +869,26 @@ main {
                 right: 20px;
                 display: none;
                 transition: none;
+            }
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &_search {
+            &_form {
+                form {
+                    padding: 25px 20px;
+                    input {
+                        width: 100%;
+                        margin-bottom: 15px;
+                        height: 45px;
+                    }
+                    button {
+                        width: 100%;
+                    }
+                    .container {
+                        padding: 0;
+                    }
+                }
             }
         }
     }
