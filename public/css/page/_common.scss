@@ -74,6 +74,20 @@ main {
     }
 }
 
+.textarea-common {
+    background-color: #F1F1F1;
+    border: 1px solid $gray-bb;
+    border-radius: 15px;
+    padding: 5px 20px;
+    font-size: 16px;
+    font-family: $font-mont;
+    &::placeholder {
+        font-size: 16px;
+        color: $blue-3;
+        font-family: $font-mont;
+    }
+}
+
 .input {
     &-common {
         height: 50px;
@@ -97,7 +111,7 @@ main {
             font-family: $font-mont;
             margin-bottom: 8px;
         }
-        .input-common {
+        .input-common, .textarea-common {
             width: 100%;
         }
     }
@@ -350,6 +364,40 @@ main {
             }
             span {
                 color: #fff;
+            }
+        }
+    }
+    &-inquiry {
+        padding: 10px 40px 8px;
+        background-color: $blue-1;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        transition: $transition-common;
+        border: 1px solid $blue-1;
+        svg {
+            width: 20px;
+            margin-right: 8px;
+            path {
+                fill: #fff;
+                transition: $transition-common;
+            }
+        }
+        span {
+            color: #fff;
+            font-family: $font-mont;
+            font-size: 18px;
+            transition: $transition-common;
+        }
+        &:hover {
+            background-color: transparent;
+            svg {
+                path {
+                    fill: $blue-1
+                }
+            }
+            span {
+                color: $blue-1;
             }
         }
     }
@@ -1147,6 +1195,45 @@ main {
             }
         }
     }
+    &-m {
+        width: calc(100% - 30px);
+        position: relative;
+        margin-left: auto;
+        margin-bottom: 40px;
+        &_active {
+            border-radius: 100px 0 0 100px;
+            border: 1px solid $gray-bb;
+            border-right: 0;
+            padding: 8px 30px;
+            display: flex;
+            align-items: center;
+            span {
+                width: calc(100% - 15px);
+                padding-right: 15px;
+                font-family: $font-mont;
+            }
+            img {
+                width: 15px;
+            }
+        }
+        ul {
+            position: absolute;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 15px 0 0 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            top: calc(100% + 5px);
+            z-index: 10;
+            padding: 15px 0;
+            display: none;
+            a {
+                display: block;
+                padding: 8px 20px;
+                font-family: $font-mont;
+                color: $gray-85;
+            }
+        }
+    }
 }
 
 .page {
@@ -1223,9 +1310,73 @@ main {
     }
     @media screen and (max-width: 575px) {
         display: block;
+        padding: 0 20px;
         a {
             width: 100%;
             margin: 0 0 15px 0;
         }
     }
+}
+
+.bg-page {
+    background-image: url(../img/common-bg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+        a {
+            font-family: $font-mont;
+            position: relative;
+            transition: $transition-common;
+            display: block;
+            padding: 0 10px;
+            &::after {
+                position: absolute;
+                content: "";
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: $blue-4;
+                bottom: -7px;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: $transition-common;
+            }
+        }
+        &:not(.pagination_arrow) {
+            a {
+                &.active, &:hover {
+                    color: $blue-4;
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    &_arrow {
+        path {
+            transition: $transition-common;
+        }
+        &:hover {
+            path {
+                fill: $blue-1;
+            }
+        }
+    }
+}
+
+.title-page {
+    font-family: $font-mont;
+    color: $blue-1;
+    margin-bottom: 45px;
+    font-size: 32px;
+    font-weight: 600;
 }

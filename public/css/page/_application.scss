@@ -10,7 +10,6 @@
             .application_pic {
                 width: 35%;
                 padding-bottom: 35%;
-                position: relative;
             }
             &:nth-child(even) {
                 .application_pic {
@@ -84,16 +83,19 @@
         background-position: center;
         background-repeat: no-repeat;
         display: block;
-        &:hover {
-            .application_pic {
-                &_inner {
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-                }
-                &_mask {
-                    opacity: 1;
-                }
-                &_icon {
-                    opacity: 1;
+        position: relative;
+        &:not(.nolink) {
+            &:hover {
+                .application_pic {
+                    &_inner {
+                        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+                    }
+                    &_mask {
+                        opacity: 1;
+                    }
+                    &_icon {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -140,6 +142,97 @@
             opacity: 0;
             path {
                 fill: #fff;
+            }
+        }
+    }
+    &_detail {
+        position: relative;
+        &_icon {
+            position: absolute;
+            width: 30vw;
+            top: -10vw;
+            right: -5%;
+            height: auto;
+            path {
+                fill: rgba(167, 189, 188, 0.07);
+            }
+        }
+        .application_pic {
+            width: 35%;
+            padding-bottom: 35%;
+        }
+        &_intro {
+            width: 65%;
+            padding-left: 55px;
+            h2 {
+                font-size: 28px;
+                font-family: $font-mont;
+                margin-bottom: 20px;
+                font-weight: 600;
+                color: $blue-1;
+            }
+            p {
+                font-size: 14px;
+                margin-bottom: 40px;
+            }
+        }
+        &_top {
+            margin-bottom: 50px;
+        }
+        &_text {
+            max-width: 940px;
+            width: 100%;
+            margin: 0 auto 100px;
+            p {
+                font-size: 14px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        &_product {
+            &_title {
+                text-align: center;
+                color: $blue-1;
+                font-family: $font-mont;
+                font-size: 32px;
+                font-weight: 600;
+                margin-bottom: 35px;
+            }
+            &_arrow {
+                width: 35px;
+                margin: 0 8px;
+                cursor: pointer;
+                svg {
+                    width: 100%;
+                    path {
+                        transition: $transition-common;
+                    }
+                }
+                &:hover {
+                    svg {
+                        path {
+                            fill: $blue-1
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 991px) {
+            .application_pic {
+                margin: 0 auto 30px; 
+                width: 50%;
+                padding-bottom: 50%;
+            }
+            &_intro {
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            .application_pic {
+                width: 100%;
+                padding-bottom: 100%;
             }
         }
     }

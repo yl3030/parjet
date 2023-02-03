@@ -1,0 +1,34 @@
+.parker {
+    &_pic {
+        width: 30%;
+        img {
+            width: 100%;
+        }
+    }
+    &_text {
+        width: 70%;
+        padding-left: 55px;
+        p {
+            font-size: 14px;
+        }
+    }
+    .btn-inquiry {
+        margin-bottom: 75px;
+    }
+    @media screen and (max-width: 767px) {
+        &_pic {
+            width: 50%;
+        }
+        &_text {
+            width: 100%;
+            margin-top: 40px;
+            padding: 0;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &_pic {
+            max-width: 250px;
+            width: 100%;
+        }
+    }
+}

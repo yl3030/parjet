@@ -1,0 +1,35 @@
+.contact {
+    .row {
+        margin-left: -20px;
+        margin-right: -20px;
+        >div {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    .textarea-common {
+        height: 154px;
+    }
+    &_btn {
+        margin-top: 45px;
+        button {
+            padding: 13px 50px;
+            margin: 0 15px;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &_btn {
+            margin-top: 25px;
+        }
+    }
+    @media screen and (max-width: 414px) {
+        &_btn {
+            justify-content: space-between !important;
+            button {
+                padding: 13px 10px;
+                margin: 0;
+                width: calc(50% - 8px);
+            }
+        }
+    }
+}
