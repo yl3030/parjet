@@ -16,6 +16,20 @@ $(".header_nav_first>.drop").click(function(){
     }
 })
 
+function headerNavProduct(){
+    if($(window).width() < 992) {
+        $(".header_nav_product").attr("href","javascript:void(0)");
+    }else {
+        $(".header_nav_product").attr("href","./product_class.html");
+    }
+}
+headerNavProduct();
+
+
+$(window).on("resize scroll",function(){
+    headerNavProduct();
+})
+
 // function navDrop() {
 //     $(".header_nav_first>li").each(function(){
 //         if($(window).width() < 992) {

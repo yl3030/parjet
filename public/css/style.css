@@ -1207,6 +1207,11 @@ main {
   text-align: right;
 }
 
+.footer_copyright a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .footer_certi {
   width: 45px;
   margin-left: 20px;
@@ -1719,6 +1724,8 @@ main {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-filter: drop-shadow(7px 7px 10px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(7px 7px 10px rgba(0, 0, 0, 0.3));
 }
 
 .home_banner_circle img {
@@ -4002,7 +4009,7 @@ main {
   padding-top: 70px;
   padding-right: 50px;
   padding: 70px 40px;
-  height: calc(100vh - 80px - 286.14px);
+  height: calc(100vh - 80px);
   overflow-y: auto;
 }
 
@@ -4172,7 +4179,7 @@ main {
 
 .inquiry_form {
   padding: 116px 40px 70px 40px;
-  height: calc(100vh - 80px - 286.14px);
+  height: calc(100vh - 80px);
   overflow-y: auto;
 }
 

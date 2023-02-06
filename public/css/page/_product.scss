@@ -998,7 +998,7 @@
         padding-top: 70px;
         padding-right: 50px;
         padding: 70px 40px;
-        height: calc(100vh - 80px - 286.14px);
+        height: calc(100vh - 80px);
         overflow-y: auto;
         &_item {
             display: flex;
@@ -1120,7 +1120,7 @@
     }
     &_form {
         padding: 116px 40px 70px 40px;
-        height: calc(100vh - 80px - 286.14px);
+        height: calc(100vh - 80px);
         overflow-y: auto;
         &_profile {
             max-width: 450px;
