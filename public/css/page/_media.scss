@@ -49,7 +49,7 @@
             font-family: $font-mont;
             color: #4d4d4d;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 1.25em;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 1;
@@ -58,7 +58,7 @@
         }
         &_content {
             color: #909090;
-            font-size: 14px;
+            font-size: 0.875em;
             margin: 0;
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -67,7 +67,7 @@
         }
         @media screen and (max-width: 991px) {
             &_title {
-                font-size: 18px;
+                font-size: 1.125em;
             }
         }
     }
@@ -109,7 +109,7 @@
             padding-left: 50px;
             h2 {
                 font-family: $font-mont;
-                font-size: 28px;
+                font-size: 1.75em;
                 font-weight: 600;
                 margin-bottom: 45px;
                 color: $blue-1;
@@ -136,7 +136,7 @@
         @media screen and (max-width: 575px) {
             &_intro {
                 h2 {
-                    font-size: 22px;
+                    font-size: 1.375em;
                     margin-bottom: 30px;
                 }
             }
@@ -200,7 +200,7 @@
             background: rgba(46, 138, 193, 0.8);
             color: #fff;
             font-family: $font-mont;
-            font-size: 18px;
+            font-size: 1.125em;
             left: 0;
             bottom: 0;
             position: absolute;
@@ -220,7 +220,7 @@
                 }
             }
             &_text {
-                font-size: 16px;
+                font-size: 1em;
             }
         }
         @media screen and (max-width: 767px) {
@@ -235,7 +235,7 @@
                 }
             }
             &_text {
-                font-size: 14px;
+                font-size: 0.875em;
             }
         }
         @media screen and (max-width: 575px) {
@@ -308,7 +308,7 @@
             padding: 10px 20px;
             color: #fff;
             font-family: $font-mont;
-            font-size: 22px;
+            font-size: 1.375em;
             font-weight: 600;
             bottom: 0;
             text-shadow: 0 2px 5px rgba(0,0,0,0.15);
@@ -328,7 +328,7 @@
                 margin-bottom: 30px;
             }
             &_text {
-                font-size: 20px;
+                font-size: 1.25em;
             }
         }
     }
@@ -361,7 +361,7 @@
         }
         &_title {
             font-family: $font-mont;
-            font-size: 18px;
+            font-size: 1.125em;
             margin: 0;
             width: calc(100% - 25px);
         }
@@ -382,7 +382,7 @@
                 padding: 10px;
             }
             &_title {
-                font-size: 16px;
+                font-size: 1em;
             }
         }
     }

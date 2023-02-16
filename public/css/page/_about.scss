@@ -1,6 +1,6 @@
 .about {
     h2 {
-        font-size: 32px;
+        font-size: 2em;
         color: $blue-1;
         font-weight: 600;
         margin-bottom: 30px;
@@ -73,7 +73,7 @@
             }
             &_text {
                 p {
-                    font-size: 14px;
+                    font-size: 0.875em;
                 }
             }
         }
@@ -233,6 +233,9 @@
     &_history {
         position: relative;
         margin-bottom: 100px;
+        &_item {
+            position: static;
+        }
         &_num {
             position: absolute;
             width: 28vw;
@@ -243,6 +246,7 @@
         &_year {
             padding-bottom: 15px;
             position: relative;
+            padding-bottom: 200px;
             &::after {
                 position: absolute;
                 content: "";
@@ -251,7 +255,8 @@
                 border-radius: 50%;
                 background-color: #fff;
                 border: 1px solid #595959;
-                bottom: 15px;
+                // bottom: 15px;
+                top: 46px;
                 right: 0;
                 transform: translateY(50%);
                 z-index: 1;
@@ -263,7 +268,7 @@
                 h3 {
                     font-family: $font-mont;
                     color: #4e4e4e;
-                    font-size: 32px;
+                    font-size: 2em;
                     margin: 0;
                     font-weight: 600;
                     transition: $transition-common;
@@ -295,7 +300,11 @@
                     opacity: 0;
                 }
             }
+            .swiper-wrapper {
+                position: static;
+            }
             .swiper-slide {
+                position: static;
                 &-active {
                     .about_history_year_item {
                         h3 {
@@ -308,6 +317,9 @@
                             opacity: 1;
                         }
                     }
+                    .about_history_content_item {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -318,8 +330,15 @@
                 position: relative;
             }
             &_item {
+                position: absolute;
+                // width: calc(100% - 250px);
+                width: 100%;
+                top: calc(100% + 45px);
+                opacity: 0;
+                transition: $transition-common;
+                padding: 0 100px;
                 h4 {
-                    font-size: 20px;
+                    font-size: 1.25em;
                     font-weight: 600;
                     color: $blue-1;
                     margin-bottom: 25px;
@@ -335,8 +354,11 @@
                         bottom: -10px;
                     }
                 }
+                img {
+                    width: 100%;
+                }
                 p {
-                    font-size: 20px;
+                    font-size: 1.25em;
                     font-weight: 600;
                 }
             }
@@ -344,8 +366,8 @@
         &_arrow {
             position: absolute;
             width: 35px;
-            top: 50%;
-            transform: translateY(-50%);
+            // top: 50%;
+            transform: translateY(50%);
             svg {
                 width: 100%;
                 path {
@@ -374,13 +396,35 @@
                 }
                 &_item {
                     p {
-                        font-size: 18px;
+                        font-size: 1.125em;
                     }
                 }
             }
             &_num {
                 width: 38vw;
                 top: -20%;
+            }
+        }
+        @media screen and (max-width: 575px) {
+            &_content {
+                &_item {
+                    padding: 0;
+                    // width: calc(100vw - 40px);
+                }
+            }
+            &_arrow {
+                position: static;
+                margin: 0 10px;
+                left: 0;
+                transform: none;
+                &-box {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    bottom: 0;
+                }
             }
         }
         @media screen and (max-width: 450px) {

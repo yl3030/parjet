@@ -2,6 +2,17 @@
     &_banner {
         position: relative;
         overflow: hidden;
+        .banner_style {
+            transition: $transition-common;
+            transform: translateY(7.22vw);
+            // opacity: 0;
+        }
+        &.scroll {
+            .banner_style {
+                // opacity: 1;
+                transform: none;
+            }
+        }
         &_pic {
             position: relative;
             width: 100%;
@@ -31,7 +42,7 @@
             transform: translate(-50%, -50%);
             filter: drop-shadow(7px 7px 10px rgba(0,0,0,0.3));
             img {
-                animation: bannerCircle 4s linear infinite;
+                animation: bannerCircle 1.5s;
             }
         }
         &_text {
@@ -41,6 +52,12 @@
             left: 0;
             transform: translateY(-50%);
             filter:drop-shadow(7px 7px 10px rgba(0,0,0,0.5));
+            opacity: 0.9;
+        }
+        @media screen and (max-width: 767px) {
+            .banner_style {
+                transform: translateY(9.42vw);
+            }
         }
         @media screen and (max-width: 575px) {
             &_pic {
@@ -66,6 +83,7 @@
         position: absolute;
         left: 50%;
         bottom: 3%;
+        transform: translateX(-50%);
         cursor: pointer;
         &_line {
             position: relative;
@@ -88,7 +106,7 @@
             font-family: $font-mont;
             text-align: center;
             color: #fff;
-            font-size: 12px;
+            font-size: 0.75em;
         }
     }
     &_about {
@@ -103,7 +121,7 @@
             padding: 90px 50px;
             position: relative;
             p {
-                font-size: 14px;
+                font-size: 0.875em;
                 line-height: 1.6;
                 margin: 0;
             }
@@ -190,7 +208,7 @@
     &_title {
         color: #444;
         font-family: $font-play;
-        font-size: 60px;
+        font-size: 3.75em;
         font-weight: 700;
         position: relative;
         width: fit-content;
@@ -211,13 +229,13 @@
             z-index: -1;
         }
         @media screen and (max-width: 991px) {
-            font-size: 52px;
+            font-size: 3.25em;
         }
         @media screen and (max-width: 575px) {
-            font-size: 44px;
+            font-size: 2.75em;
         }
         @media screen and (max-width: 450px) {
-            font-size: 40px;
+            font-size: 2.5em;
             &::after {
                 width: 25px;
                 height: 25px;
@@ -259,7 +277,7 @@
                     color: $blue-1;
                     transition: $transition-common;
                     margin: 0;
-                    font-size: 16px;
+                    font-size: 1em;
                     font-weight: normal;
                     font-family: $font-mont;
                 }
@@ -358,7 +376,7 @@
                         margin-bottom: 0;
                     }
                     h3 {
-                        font-size: 14px;
+                        font-size: 0.875em;
                     }
                 }
             }
@@ -405,13 +423,14 @@
             h3 {
                 font-weight: 700;
                 color: $blue-4;
-                font-size: 52px;
+                // font-size: 52px;
+                font-size: 3em;
                 margin: 0 0 5px;
             }
             p {
                 margin: 0;
                 font-weight: normal;
-                font-size: 16px;
+                font-size: 1em;
             }
         }
         .row {
@@ -465,7 +484,7 @@
             &_item {
                 padding: 37px 10px 27px;
                 h3 {
-                    font-size: 48px;
+                    font-size: 3em;
                     margin-bottom: 0;
                 }
             }
@@ -482,10 +501,10 @@
         @media screen and (max-width: 450px) {
             &_item {
                 h3 {
-                    font-size: 44px;
+                    font-size: 2.75em;
                 }
                 p {
-                    font-size: 14px;
+                    font-size: 0.875em;
                 }
             }
         }
@@ -573,7 +592,7 @@
                 text-align: center;
                 font-family: $font-mont;
                 font-weight: normal;
-                font-size: 16px;
+                font-size: 1em;
                 margin-bottom: 10px;
                 color: $blue-1;
                 transition: $transition-common;
@@ -582,7 +601,7 @@
         &_intro {
             // font-family: $font-mont;
             font-weight: normal;
-            font-size: 14px;
+            font-size: 0.875em;
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 5;
@@ -694,7 +713,7 @@
         @media screen and (max-width: 767px) {
             &_main {
                 h3 {
-                    font-size: 14px;
+                    font-size: 0.875em;
                 }
             }
             &_inner {
@@ -795,7 +814,7 @@
             padding-left: 30px;
             width: 53%;
             h3 {
-                font-size: 20px;
+                font-size: 1.25em;
                 margin-bottom: 15px;
                 font-family: $font-mont;
                 transition: $transition-common;
@@ -828,7 +847,7 @@
             transition: $transition-common;
         }
         &_intro {
-            font-size: 14px;
+            font-size: 0.875em;
             color:$gray-c1;
             margin: 0;
             font-weight: 300;
@@ -877,12 +896,12 @@
                 padding-top: 20px;
                 padding-left: 0;
                 h3 {
-                    font-size: 18px;
+                    font-size: 1.125em;
                     margin-bottom: 10px;
                 }
             }
             &_date {
-                font-size: 14px;
+                font-size: 0.875em;
                 margin-bottom: 10px;
             }
         }

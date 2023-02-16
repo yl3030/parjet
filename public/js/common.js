@@ -18,9 +18,10 @@ $(".header_nav_first>.drop").click(function(){
 
 function headerNavProduct(){
     if($(window).width() < 992) {
-        $(".header_nav_product").attr("href","javascript:void(0)");
+        $(".header_nav_product, .header_nav_news").attr("href","javascript:void(0)");
     }else {
         $(".header_nav_product").attr("href","./product_class.html");
+        $(".header_nav_news").attr("href","./news.html");
     }
 }
 headerNavProduct();
