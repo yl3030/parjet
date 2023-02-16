@@ -197,50 +197,50 @@
                 <div class="video_list">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#video-1">
                                 <img class="video_list_pic" src="../public/img/exPic-1.png" alt="">
                                 <div class="video_list_mask"></div>
-                                <div class="video_list_text">Lorem ipsum dolor sit</div>
+                                <div class="video_list_text">Lorem ipsum dolor sit1</div>
                                 <img class="video_list_icon" src="../public/img/icon-video.svg" alt="">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#video-2">
                                 <img class="video_list_pic" src="../public/img/exPic-2.png" alt="">
                                 <div class="video_list_mask"></div>
-                                <div class="video_list_text">Lorem ipsum dolor sit</div>
+                                <div class="video_list_text">Lorem ipsum dolor sit2</div>
                                 <img class="video_list_icon" src="../public/img/icon-video.svg" alt="">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#video-3">
                                 <img class="video_list_pic" src="../public/img/exPic-3.png" alt="">
                                 <div class="video_list_mask"></div>
-                                <div class="video_list_text">Lorem ipsum dolor sit</div>
+                                <div class="video_list_text">Lorem ipsum dolor sit3</div>
                                 <img class="video_list_icon" src="../public/img/icon-video.svg" alt="">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#video-4">
                                 <img class="video_list_pic" src="../public/img/exPic-4.png" alt="">
                                 <div class="video_list_mask"></div>
-                                <div class="video_list_text">Lorem ipsum dolor sit</div>
+                                <div class="video_list_text">Lorem ipsum dolor sit4</div>
                                 <img class="video_list_icon" src="../public/img/icon-video.svg" alt="">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#video-5">
                                 <img class="video_list_pic" src="../public/img/exPic-5.png" alt="">
                                 <div class="video_list_mask"></div>
-                                <div class="video_list_text">Lorem ipsum dolor sit</div>
+                                <div class="video_list_text">Lorem ipsum dolor sit5</div>
                                 <img class="video_list_icon" src="../public/img/icon-video.svg" alt="">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <div class="video_list_item" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#video-6">
                                 <img class="video_list_pic" src="../public/img/exPic-6.png" alt="">
                                 <div class="video_list_mask"></div>
-                                <div class="video_list_text">Lorem ipsum dolor sit</div>
+                                <div class="video_list_text">Lorem ipsum dolor sit6</div>
                                 <img class="video_list_icon" src="../public/img/icon-video.svg" alt="">
                             </div>
                         </div>
@@ -281,11 +281,16 @@
           <div class="modal-content">
             <div class="modal-body">
               <div class="video_modal_pic">
-                <img src="../public/img/exPic-1.png" alt="">
+                <div class="video_modal_main" id="video-1"></div>
+                <div class="video_modal_main" id="video-2"></div>
+                <div class="video_modal_main" id="video-3"></div>
+                <div class="video_modal_main" id="video-4"></div>
+                <div class="video_modal_main" id="video-5"></div>
+                <div class="video_modal_main" id="video-6"></div>
               </div>
               <div class="d-flex align-items-center">
                 <h2 class="video_modal_title">Lorem ipsum dolor sit</h2>
-                <svg class="video_modal_close" data-bs-dismiss="modal" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="video_modal_close" data-bs-dismiss="modal" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="stop()">
                     <g clip-path="url(#clip0_369_20683)">
                     <path d="M19.7913 6.677L18.3226 5.20825L12.4997 11.0312L6.67676 5.20825L5.20801 6.677L11.0309 12.4999L5.20801 18.3228L6.67676 19.7916L12.4997 13.9687L18.3226 19.7916L19.7913 18.3228L13.9684 12.4999L19.7913 6.677Z" fill="#065090"/>
                     </g>
@@ -363,6 +368,88 @@
     <script src="../public/js/masonry/masonry.pkgd.min.js"></script>
     <script src="../public/js/masonry/imagesloaded.js"></script>
     <script src="../public/js/common.js"></script>
+
+    <script>
+         // popup
+         $(".video_list_item").click(function(){
+
+            let dataVideo = $(this).attr("data-video");
+            $(dataVideo).addClass("active").siblings(".video_modal_main").removeClass("active");
+
+            let name = $(this).find(".video_list_text").text();
+            $(".video_modal_title").text(name);
+        })
+        // youtube
+        var tag = document.createElement("script");
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+        var video1,video2,video3,video4,video5,video6;
+
+        function onYouTubeIframeAPIReady() {
+            video1 = new YT.Player("video-1", {
+                videoId: 'ERumF8gI_pE',
+                events: {
+                    onReady: stopVideo,
+                },
+            });
+            video2 = new YT.Player("video-2", {
+                videoId: '4aLWWWlcdZU',
+                events: {
+                    onReady: stopVideo,
+                },
+            });
+            video3 = new YT.Player("video-3", {
+                videoId: '6z_l4HWMHHg',
+                events: {
+                    onReady: stopVideo,
+                },
+            });
+            video4 = new YT.Player("video-4", {
+                videoId: '0dRs39DcFvo',
+                events: {
+                    onReady: stopVideo,
+                },
+            });
+            video5 = new YT.Player("video-5", {
+                videoId: 'HGweS93bqxg',
+                events: {
+                    onReady: stopVideo,
+                },
+            });
+            video6 = new YT.Player("video-6", {
+                videoId: 'Fw04xfNqlQs',
+                events: {
+                    onReady: stopVideo,
+                },
+            });
+        }
+
+        function stop() {
+            video1.stopVideo();
+            video2.stopVideo();
+            video3.stopVideo();
+            video4.stopVideo();
+            video5.stopVideo();
+            video6.stopVideo();
+        }
+
+        function onPlayer(event) {
+            event.target.playVideo();
+        }
+    </script>
 
 
 </body>
