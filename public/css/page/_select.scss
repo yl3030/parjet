@@ -1,0 +1,190 @@
+.select {
+    padding-bottom: 150px;
+    h2 {
+        color: $blue-1;
+        margin-bottom: 30px;
+        font-weight: 32;
+        font-family: $font-mont;
+        font-weight: 600;
+        text-align: center;
+    }
+    &_pic {
+        margin: 50px auto;
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 0 36px;
+        position: relative;
+        img {
+            width: 100%;
+        }
+        &_link {
+            &_item {
+                position: absolute;
+                width: 90px;
+                height: 36px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 14px;
+                font-family: $font-mont;
+                font-weight: 600;
+                bottom: 0;
+                transform: translateX(-50%);
+                transition: $transition-common;
+                border: 1px solid;
+                &.hiperseal {
+                    background-color: $blue-1;
+                    border-color:  $blue-1;
+                    &:hover {
+                        color: $blue-1;
+                    }
+                }
+                &.hiperlip {
+                    background-color: #4ED4DB;
+                    border-color:  #4ED4DB;
+                    &:hover {
+                        color: #4ED4DB;
+                    }
+                }
+                &.hiperflon {
+                    background-color: $blue-4;
+                    border-color:  $blue-4;
+                    &:hover {
+                        color: $blue-4;
+                    }
+                }
+                &:hover {
+                    background-color: transparent;
+                }
+                &.link-1 {
+                    left: 4.6%;
+                }
+                &.link-2 {
+                    left: 12.6%;
+                }
+                &.link-3 {
+                    left: 20.3%;
+                }
+                &.link-4 {
+                    left: 28%;
+                }
+                &.link-5 {
+                    left: 37.5%;
+                }
+                &.link-6 {
+                    left: 45.5%;
+                }
+                &.link-7 {
+                    left: 53%;
+                }
+                &.link-8 {
+                    left: 62.5%;
+                }
+                &.link-9 {
+                    left: 70.5%;
+                }
+                &.link-10 {
+                    left: 78%;
+                }
+                &.link-11 {
+                    left: 87.5%;
+                }
+                &.link-12 {
+                    left: 95.4%;
+                }
+            }
+        }
+    }
+    &_table {
+        margin-top: 50px;
+        table {
+            width: 100%;
+            thead {
+                background-color: $blue-1;
+                color: #fff;
+            }
+            td {
+                padding: 15px 5px;
+                text-align: center;
+            }
+            tbody {
+                td {
+                    border-bottom: 1px solid $gray-bb;
+                }
+            }
+        }
+        &_title {
+            background-color: #ECEFF1;
+        }
+    }
+    @media screen and (max-width: 1420px) {
+        &_pic {
+            &_link {
+                &_item {
+                    width: 65px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        &_pic {
+            padding: 0 0 0 65px;
+            min-width: 720px;
+            &_box {
+                overflow-x: auto;
+            }
+            &_link {
+                &_item {
+                    left: 0 !important;
+                    transform: translateY(-50%);
+                    &.link-1 {
+                        top: 3.5%;
+                    }
+                    &.link-2 {
+                        top: 11.3%;
+                    }
+                    &.link-3 {
+                        top: 19.3%;
+                    }
+                    &.link-4 {
+                        top: 27.3%;
+                    }
+                    &.link-5 {
+                        top: 37.3%;
+                    }
+                    &.link-6 {
+                        top: 45%;
+                    }
+                    &.link-7 {
+                        top: 53%;
+                    }
+                    &.link-8 {
+                        top: 63%;
+                    }
+                    &.link-9 {
+                        top: 71%;
+                    }
+                    &.link-10 {
+                        top: 79%;
+                    }
+                    &.link-11 {
+                        top: 88.5%;
+                    }
+                    &.link-12 {
+                        top: 96.5%;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 767px) {
+        &_table {
+            td {
+                font-size: 14px;
+            }
+        }
+    }
+}
