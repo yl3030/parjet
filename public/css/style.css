@@ -6083,14 +6083,15 @@ main {
 
 @media screen and (max-width: 991px) {
   .select_pic {
-    padding: 0 0 0 65px;
+    padding: 0 65px 0 0;
     min-width: 720px;
   }
   .select_pic_box {
     overflow-x: auto;
   }
   .select_pic_link_item {
-    left: 0 !important;
+    right: 0 !important;
+    left: inherit !important;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
   }
