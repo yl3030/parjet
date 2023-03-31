@@ -1320,3 +1320,72 @@
         }
     }
 }
+
+.check {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    &_item {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        height: 50px;
+        cursor: pointer;
+        span {
+            font-size: 0.875em;
+            width: calc(100% - 20px);
+            padding-left: 10px;
+        }
+        &.active {
+            .check_box, .radio_box {
+                background-color: $blue-2;
+                border-color: $blue-2;
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+        .input-item_unit {
+            margin-left: 15px;
+            .input-common {
+                width: 100px;
+                margin-right: 10px;
+            }
+            span {
+                width: auto;
+            }
+        }
+    }
+    &_box {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $gray-bb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-common;
+        img {
+            width: 80%;
+            transition: $transition-common;
+            opacity: 0;
+        }
+    }
+}
+
+.radio_box {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $gray-bb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-common;
+    border-radius: 50%;
+    img {
+        width: 80%;
+        transition: $transition-common;
+        opacity: 0;
+    }
+}
