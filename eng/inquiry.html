@@ -255,19 +255,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item">
-                                            <label for="">Silicon Filled (FDA available)</label>
-                                            <select name="" id="" class="input-common">
-                                                <option value="">Yes</option>
-                                                <option value="">No</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-item">
                                             <label for="">Seal Motion</label>
                                             <select name="" id="" class="input-common">
-                                                <option value="">Yes</option>
-                                                <option value="">No</option>
+                                                <option value="">Static</option>
+                                                <option value="">Reciprocating</option>
+                                                <option value="">Rotary, Other</option>
                                             </select>
                                         </div>
                                     </div>
@@ -276,7 +268,30 @@
                                             <label for="">Seal Type</label>
                                             <select name="" id="" class="input-common">
                                                 <option value="">Rod</option>
+                                                <option value="">Piston</option>
+                                                <option value="">Face Seal</option>
+                                                <option value="">Others</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="input-item">
+                                            <label for="">System Pressure</label>
+                                            <div class="row">
+                                                <div class="col-8"><input type="text" class="input-common w-100"></div>
+                                                <div class="col-4">
+                                                    <select name="" id="" class="input-common w-100">
+                                                        <option value="">Internal</option>
+                                                        <option value="">External</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <div class="input-item">
+                                            <label for="">System Pressure</label>
+                                            <input type="text" class="input-common">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -284,14 +299,16 @@
                                             <label for="">System Pressure</label>
                                             <select name="" id="" class="input-common">
                                                 <option value="">Internal</option>
+                                                <option value="">External</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-6">
                                         <div class="input-item">
                                             <label for="">Pressure Direction</label>
                                             <select name="" id="" class="input-common">
                                                 <option value="">Unidirectional</option>
+                                                <option value="">Bidirectional</option>
                                             </select>
                                         </div>
                                     </div>
@@ -301,12 +318,12 @@
                                             <input type="text" class="input-common">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <div class="input-item">
                                             <label for="">Rotation</label>
                                             <input type="text" class="input-common">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-6">
                                         <div class="input-item">
                                             <label for="">Stroke Length</label>
@@ -315,13 +332,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item">
-                                            <label for="">Velocity</label>
-                                            <input type="text" class="input-common">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="input-item">
-                                            <label for="">System Pressure</label>
+                                            <label for="">Linear Velocity</label>
                                             <input type="text" class="input-common">
                                         </div>
                                     </div>
@@ -333,8 +344,17 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-item">
-                                            <label for="">Media</label>
+                                            <label for="">Media to seal</label>
                                             <input type="text" class="input-common">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-item">
+                                            <label for="">Silicon Filled (FDA available)</label>
+                                            <select name="" id="" class="input-common">
+                                                <option value="">Yes</option>
+                                                <option value="">No</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -1046,10 +1066,10 @@
                                                 <div class="check_item">
                                                     <div class="radio_box"><img src="../public/img/icon-check.svg" alt=""></div>
                                                     <span>Yes</span>
-                                                    <div class="input-item_unit">
-                                                        <input type="number" class="input-common">
-                                                        <span>Psi</span>
-                                                    </div>
+                                                </div>
+                                                <div class="input-item_unit">
+                                                    <input type="number" class="input-common">
+                                                    <span>Psi</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1080,7 +1100,7 @@
                                     <div class="col-lg-6">
                                         <div class="inquiry_form_section">
                                             <div class="input-item">
-                                                <label for="">Minimun Temperature</label>
+                                                <label for="">Minimum Temperature</label>
                                                 <div class="input-item_unit">
                                                     <input type="number" class="input-common">
                                                     <span>°C</span>
@@ -1094,7 +1114,7 @@
                                                 </div>
                                             </div>
                                             <div class="input-item">
-                                                <label for="">Maximun Temperature</label>
+                                                <label for="">Maximum Temperature</label>
                                                 <div class="input-item_unit">
                                                     <input type="number" class="input-common">
                                                     <span>°C</span>
