@@ -119,14 +119,23 @@ main {
             display: flex;
             align-items: center;
             .input-common {
-                // width: calc(100% - 100px);
-                width: 100px;
+                width: calc(100% - 100px);
+                // width: 100px;
             }
             span {
-                // width: 100px;
-                margin-left: 10px;
+                width: 100px;
+                // margin-left: 10px;
                 text-align: center;
                 font-size: 0.875em;
+            }
+            &.psi {
+                .input-common {
+                    width: 100px;
+                }
+                span {
+                    width: auto;
+                    padding-left: 10px;
+                }
             }
         }
     }

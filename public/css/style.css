@@ -159,13 +159,22 @@ main {
 }
 
 .input-item_unit .input-common {
-  width: 100px;
+  width: calc(100% - 100px);
 }
 
 .input-item_unit span {
-  margin-left: 10px;
+  width: 100px;
   text-align: center;
   font-size: 0.875em;
+}
+
+.input-item_unit.psi .input-common {
+  width: 100px;
+}
+
+.input-item_unit.psi span {
+  width: auto;
+  padding-left: 10px;
 }
 
 .input-vert {
