@@ -500,6 +500,8 @@
                     object-fit: cover;
                     top: 0;
                     left: 0;
+                    border-radius: 50%;
+                    overflow: hidden;
                 }
             }
         }
@@ -686,7 +688,7 @@
             &_pic {
                 margin: 0 auto 50px;
                 width: 100%;
-                max-width: 450px;
+                max-width: 350px;
             }
             &_prev {
                 top: 23%;
@@ -944,6 +946,12 @@
                 td {
                     white-space: nowrap;
                 }
+            }
+        }
+        &_text {
+            p {
+                text-align: justify;
+                margin: 20px 0;
             }
         }
         @media screen and (max-width: 1199px) {

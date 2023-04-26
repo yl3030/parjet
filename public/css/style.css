@@ -1185,7 +1185,7 @@ main {
   width: 100%;
 }
 
-.footer_inform li {
+.footer_inform li, .footer_inform a {
   font-size: 0.8125em;
   color: #fff;
   margin-bottom: 8px;
@@ -3511,6 +3511,8 @@ main {
      object-fit: cover;
   top: 0;
   left: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .product_detail_text {
@@ -3741,7 +3743,7 @@ main {
   .product_detail_pic {
     margin: 0 auto 50px;
     width: 100%;
-    max-width: 450px;
+    max-width: 350px;
   }
   .product_detail_prev {
     top: 23%;
@@ -4028,6 +4030,11 @@ main {
 
 .product_intro_table table td {
   white-space: nowrap;
+}
+
+.product_intro_text p {
+  text-align: justify;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 1199px) {
@@ -5377,6 +5384,7 @@ main {
   max-width: 940px;
   width: 100%;
   margin: 0 auto 100px;
+  text-align: justify;
 }
 
 .application_detail_text p {
