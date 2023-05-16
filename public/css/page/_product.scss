@@ -419,7 +419,7 @@
             align-items: center;
             border: 1px solid $gray-85;
             border-radius: 15px;
-            padding: 10px 10px 0; 
+            padding: 10px; 
             transition: $transition-common;
             margin-bottom: 20px;
             h3 {
@@ -429,7 +429,7 @@
                 margin: 0;
                 font-size: 1em;
                 width: calc(100% - 85px);
-                padding-bottom: 10px;
+                // padding-bottom: 10px;
                 transition: $transition-common;
             }
             &:hover {

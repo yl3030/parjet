@@ -3409,7 +3409,7 @@ main {
           align-items: center;
   border: 1px solid #858585;
   border-radius: 15px;
-  padding: 10px 10px 0;
+  padding: 10px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin-bottom: 20px;
@@ -3422,7 +3422,6 @@ main {
   margin: 0;
   font-size: 1em;
   width: calc(100% - 85px);
-  padding-bottom: 10px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -5374,6 +5373,7 @@ main {
 .application_detail_intro p {
   font-size: 0.875em;
   margin-bottom: 40px;
+  text-align: justify;
 }
 
 .application_detail_top {
@@ -5385,6 +5385,7 @@ main {
   width: 100%;
   margin: 0 auto 100px;
   text-align: justify;
+  padding: 0 20px;
 }
 
 .application_detail_text p {
