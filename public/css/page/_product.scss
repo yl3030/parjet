@@ -425,17 +425,21 @@
             margin-bottom: 20px;
             h3 {
                 margin: 0;
-                padding-left: 15px;
                 font-weight: normal;
-                margin: 0;
+                margin: 0 0 5px;
                 font-size: 1em;
-                width: calc(100% - 85px);
                 // padding-bottom: 10px;
+                transition: $transition-common;
+            }
+            p {
+                font-size: 14px;
+                margin: 0;
+                color: $blue-3;
                 transition: $transition-common;
             }
             &:hover {
                 border-color: $blue-4;
-                h3 {
+                h3, p {
                     color: $blue-4;
                 }
             }
@@ -445,6 +449,10 @@
             img {
                 width: 100%;
             }
+        }
+        &_text {
+            width: calc(100% - 85px);
+            padding-left: 15px;
         }
     }
     &_detail {
@@ -512,12 +520,16 @@
             .breadcrumb {
                 margin-bottom: 35px;
             }
-            h1 {
+            h2 {
                 font-size: 2em;
                 font-weight: 600;
                 font-family: $font-mont;
                 margin-bottom: 15px;
             } 
+            h1 {
+                font-size: 0.875em;
+                font-weight: normal;
+            }
         }
         &_intro {
             margin-bottom: 15px;

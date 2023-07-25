@@ -3418,11 +3418,17 @@ main {
 
 .product_classList_item h3 {
   margin: 0;
-  padding-left: 15px;
   font-weight: normal;
-  margin: 0;
+  margin: 0 0 5px;
   font-size: 1em;
-  width: calc(100% - 85px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.product_classList_item p {
+  font-size: 14px;
+  margin: 0;
+  color: #A7BDBC;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -3431,7 +3437,7 @@ main {
   border-color: #2E8AC1;
 }
 
-.product_classList_item:hover h3 {
+.product_classList_item:hover h3, .product_classList_item:hover p {
   color: #2E8AC1;
 }
 
@@ -3441,6 +3447,11 @@ main {
 
 .product_classList_pic img {
   width: 100%;
+}
+
+.product_classList_text {
+  width: calc(100% - 85px);
+  padding-left: 15px;
 }
 
 .product_detail {
@@ -3524,11 +3535,16 @@ main {
   margin-bottom: 35px;
 }
 
-.product_detail_text h1 {
+.product_detail_text h2 {
   font-size: 2em;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 15px;
+}
+
+.product_detail_text h1 {
+  font-size: 0.875em;
+  font-weight: normal;
 }
 
 .product_detail_intro {
